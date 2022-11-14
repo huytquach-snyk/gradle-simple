@@ -1,0 +1,5 @@
+ext{
+    libraryVersions = [
+        jacksondatabind : '2.12.4',
+    ]
+}

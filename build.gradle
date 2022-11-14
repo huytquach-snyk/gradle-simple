@@ -7,12 +7,17 @@ version = '2.0'
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
 
+apply from: 'dependencies.gradle'
+
 repositories {
   mavenCentral()
 }
 
 dependencies {
   implementation 'com.google.guava:guava:29.0-jre'
+  implementation('com.autodesk.fusion.symphony:commons-logging:' + libraryVersions.commonsLogging){
+    changing = true
+  }
 }
 
 java {
