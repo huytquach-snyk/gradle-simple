@@ -14,26 +14,26 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.google.guava:guava:29.0-jre'
-  implementation('com.fasterxml.jackson.core:jackson-databind' + libraryVersions.jacksondatabind){
+  compile 'com.google.guava:guava:29.0-jre'
+  compile('com.fasterxml.jackson.core:jackson-databind:' + libraryVersions.jacksondatabind){
     changing = true
   }
 }
 
-java {
-	withSourcesJar()
-	withJavadocJar()
-}
+//java {
+//	withSourcesJar()
+//	withJavadocJar()
+//}
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-		from components.java
-        }
-    }
-}
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//		from components.java
+//       }
+//    }
+//}
 
 wrapper {
-    gradleVersion = "7.3.3"
+    gradleVersion = "5.6.4"
     distributionType = Wrapper.DistributionType.ALL
 }
