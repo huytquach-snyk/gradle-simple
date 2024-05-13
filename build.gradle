@@ -12,7 +12,9 @@ repositories {
 }
 
 dependencies {
+  runtimeOnly group: 'com.google.guava', name:'guava', version:'31.1-jre'
   implementation 'com.google.guava:guava:29.0-jre'
+  testImplementation 'com.google.guava:guava:32.1.1-jre'
 }
 
 java {
@@ -31,4 +33,9 @@ publishing {
 wrapper {
     gradleVersion = "7.3.3"
     distributionType = Wrapper.DistributionType.ALL
+}
+
+task copyDependencies(type: Copy) {
+   from configurations.runtimeClasspath  
+   into 'dependencies'
 }
